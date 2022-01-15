@@ -6,8 +6,19 @@ class User extends BaseModel {
   }
 
   static get relationMappings() {
-    return {}
+    return {
+      pets: {
+        relation: this.HasManyRelation,
+        modelClass: Pets,
+        join: {
+          from: 'users.id',
+          to: 'pets.ownerId',
+        }
+      }
+    }
+
   }
+
 }
 
 module.exports = User
