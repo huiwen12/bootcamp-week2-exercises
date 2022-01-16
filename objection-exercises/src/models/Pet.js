@@ -1,5 +1,6 @@
 // Write your Pet model here!
 const { BelongsToOneRelation, Model } = require('objection')
+const BaseModel = require('./BaseModel')
 
 class Pet extends BaseModel {
     static get tableName() {
